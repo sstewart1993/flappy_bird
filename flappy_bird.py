@@ -57,15 +57,15 @@ floor_surface = pygame.transform.scale2x(floor_surface)
 floor_x_pos = 0
 
 bird_surface = pygame.image.load('assets/bluebird-midflap.png').convert()
-bird_surface = pygame.transform.scale2x(bird_surface)
+# bird_surface = pygame.transform.scale2x(bird_surface)
 bird_rect = bird_surface.get_rect(center = (100, 500))
 
 pipe_surface = pygame.image.load('assets/pipe-green.png').convert()
 pipe_surface = pygame.transform.scale2x(pipe_surface)
 pipe_list = []
 SPAWNPIPE = pygame.USEREVENT
-pygame.time.set_timer(SPAWNPIPE, 1200)
-pipe_height = [400, 600, 800]
+pygame.time.set_timer(SPAWNPIPE, 1000)
+pipe_height = [400, 600, 700]
 
 
 while True:
