@@ -48,11 +48,11 @@ def score_display(game_state):
         screen.blit(score_surface, score_rect)
     if(game_state == "game_over"):
         score_surface = game_font.render(f"Score: {int(score)}", True, (255, 255, 255))
-        score_rect = score_surface.get_rect(center = (288, 100))
+        score_rect = score_surface.get_rect(center = (288, 200))
         screen.blit(score_surface, score_rect)
 
         high_surface = game_font.render(f"High Score: {int(high_score)}", True, (255, 255, 255))
-        high_rect = high_surface.get_rect(center = (288, 300))
+        high_rect = high_surface.get_rect(center = (288, 600))
         screen.blit(high_surface, high_rect)
 
 def update_score(score, high_score):
@@ -104,6 +104,9 @@ SPAWNPIPE = pygame.USEREVENT
 pygame.time.set_timer(SPAWNPIPE, 1000)
 pipe_height = [400, 600, 700]
 
+game_over_surface = pygame.transform.scale2x(pygame.image.load('assets/message.png').convert_alpha())
+game_over_rect = game_over_surface.get_rect(center = (288, 300))
+
 
 while True:
     for event in pygame.event.get():
@@ -150,6 +153,7 @@ while True:
         score += 0.01
         score_display("main_game")
     else:
+        screen.blit(game_over_surface, game_over_rect)
         high_score = update_score(score, high_score)
         score_display("game_over")
 
