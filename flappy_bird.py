@@ -12,7 +12,7 @@ def create_pipe():
 
 def move_pipes(pipes):
     for pipe in pipes:
-        pipe.centerx -= 3
+        pipe.centerx -= 6
     return pipes
 
 def draw_pipes(pipes):
@@ -68,7 +68,7 @@ game_font = pygame.font.Font('04B_19.TTF', 40)
 
 
 # Game Varialbles
-gravity = 0.1
+gravity = 0.3
 bird_movement = 0
 game_active = True
 score = 0
